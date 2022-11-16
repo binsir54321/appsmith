@@ -104,9 +104,9 @@ const downloadDataAsCSV = (props: {
   });
   const anchor = document.createElement("a");
   const mimeType = "application/octet-stream";
-  // @ts-expect-error: msSaveBlob does not exists on navigator
+  //tb  // @ts-expect-error: msSaveBlob does not exists on navigator
   if (navigator.msSaveBlob) {
-    // @ts-expect-error: msSaveBlob does not exists on navigator
+    //tb  // @ts-expect-error: msSaveBlob does not exists on navigator
     navigator.msSaveBlob(
       new Blob([csvContent], {
         type: mimeType,

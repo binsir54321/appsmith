@@ -30,7 +30,7 @@ import { Icon } from "@blueprintjs/core";
 import styled from "styled-components";
 import { Colors } from "constants/Colors";
 import SortIcon from "remixicon-react/ArrowUpDownLineIcon";
-/* eslint-disable react/display-name */
+//tb  /* tb eslint-disable react/display-name */
 
 const StyledDataSourcesIconV2 = styled(DataSourcesIconV2)`
   g {
@@ -52,7 +52,7 @@ const StyledQueryMain = styled(QueryMain)`
 
 export const MenuIcons: {
   //TODO(abhinav): Fix this type to JSXElementConstructor<IconProps>
-  // eslint-disable-next-line @typescript-eslint/ban-types
+  //tb  // eslint-disable-next-line @typescript-eslint/ban-types
   [id: string]: Function;
 } = {
   WIDGETS_ICON: (props: IconProps) => (

@@ -1,5 +1,5 @@
 // Workers do not have access to log.error
-/* eslint-disable no-console */
+//tb  /* tb eslint-disable no-console */
 import { DataTree } from "entities/DataTree/dataTreeFactory";
 import {
   DependencyMap,
@@ -60,7 +60,7 @@ function messageEventListener(fn: typeof eventRequestHandler) {
         } catch (e) {
           console.error(e);
           // we dont want to log dataTree because it is huge.
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          //tb  // eslint-disable-next-line @typescript-eslint/no-unused-vars
           const { dataTree, ...rest } = requestData;
           self.postMessage({
             requestId,

@@ -34,7 +34,7 @@ const JSObject1: JSCollection = {
       collectionId: "1234",
       actionConfiguration: {
         timeoutInMillisecond: 10000,
-        // @ts-expect-error: paginationType does not exists on JSAction
+        //tb  // @ts-expect-error: paginationType does not exists on JSAction
         paginationType: "NONE",
         encodeParamsToggle: true,
         body: "async () => {\n\t\t//use async-await or promises\n\t}",
@@ -77,7 +77,7 @@ const JSObject1: JSCollection = {
       collectionId: "1234",
       actionConfiguration: {
         timeoutInMillisecond: 10000,
-        // @ts-expect-error: paginationType does not exists on JSAction
+        //tb  // @ts-expect-error: paginationType does not exists on JSAction
         paginationType: "NONE",
         encodeParamsToggle: true,
         body: "() => {\n\t\t//write code here\n\t}",
@@ -147,7 +147,7 @@ const JSObject2: JSCollection = {
       collectionId: "1234",
       actionConfiguration: {
         timeoutInMillisecond: 10000,
-        // @ts-expect-error: paginationType does not exists on JSAction
+        //tb  // @ts-expect-error: paginationType does not exists on JSAction
         paginationType: "NONE",
         encodeParamsToggle: true,
         body: "() => {\n\t\t//write code here\n\t}",
@@ -190,7 +190,7 @@ const JSObject2: JSCollection = {
       collectionId: "1234",
       actionConfiguration: {
         timeoutInMillisecond: 10000,
-        // @ts-expect-error: paginationType does not exists on JSAction
+        //tb  // @ts-expect-error: paginationType does not exists on JSAction
         paginationType: "NONE",
         encodeParamsToggle: true,
         body: "async () => {\n\t\t//use async-await or promises\n\t}",

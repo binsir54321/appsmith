@@ -14,15 +14,15 @@ import { parseJSActions } from "workers/Evaluation/JSObject";
 
 const widgetConfigMap = {};
 ALL_WIDGETS_AND_CONFIG.map(([, config]) => {
-  // @ts-expect-error: Types are not available
+  //tb  // @ts-expect-error: Types are not available
   if (config.type && config.properties) {
-    // @ts-expect-error: Types are not available
+    //tb  // @ts-expect-error: Types are not available
     widgetConfigMap[config.type] = {
-      // @ts-expect-error: properties does not exists
+      //tb  // @ts-expect-error: properties does not exists
       defaultProperties: config.properties.default,
-      // @ts-expect-error: properties does not exists
+      //tb  // @ts-expect-error: properties does not exists
       derivedProperties: config.properties.derived,
-      // @ts-expect-error: properties does not exists
+      //tb  // @ts-expect-error: properties does not exists
       metaProperties: config.properties.meta,
     };
   }
@@ -495,7 +495,7 @@ describe("DataTreeEvaluator", () => {
       });
 
       // Add Api2
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       newUnEvalTree["Api2"] = { ...lintingUnEvalTree }["Api2"];
       const {
         evalOrder: order1,
@@ -513,7 +513,7 @@ describe("DataTreeEvaluator", () => {
       // self-reference Button2
       const newButton2 = { ...lintingUnEvalTree }["Button2"];
       newButton2.onClick = "{{Api2.run(); AbsentEntity.run(); Button2}}";
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       newUnEvalTree["Button2"] = newButton2;
       const {
         evalOrder: order2,

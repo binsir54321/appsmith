@@ -77,7 +77,7 @@ function Fields(props: FieldsProps) {
           {remainingFields.map((field: any, index: number) => {
             if (Array.isArray(field)) {
               if (props.depth > props.maxDepth) {
-                // eslint-disable-next-line react/jsx-no-useless-fragment
+                //tb  // eslint-disable-next-line react/jsx-no-useless-fragment
                 return <></>;
               }
               const selectorField = field[0];
@@ -132,7 +132,7 @@ function Fields(props: FieldsProps) {
     const ui = fields.map((field: any, index: number) => {
       if (Array.isArray(field)) {
         if (props.depth > props.maxDepth) {
-          // eslint-disable-next-line react/jsx-no-useless-fragment
+          //tb  // eslint-disable-next-line react/jsx-no-useless-fragment
           return <></>;
         }
         const selectorField = field[0];
@@ -165,7 +165,7 @@ function Fields(props: FieldsProps) {
         });
       }
     });
-    // eslint-disable-next-line react/jsx-no-useless-fragment
+    //tb  // eslint-disable-next-line react/jsx-no-useless-fragment
     return <>{ui}</>;
   }
 }

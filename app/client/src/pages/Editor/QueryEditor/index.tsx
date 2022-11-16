@@ -290,7 +290,7 @@ const mapStateToProps = (state: AppState, props: any): ReduxStateProps => {
   // initialValues contains merge of action, editorConfig, settingsConfig and will be passed to redux form
   merge(initialValues, action);
 
-  // @ts-expect-error: Types are not available
+  //tb  // @ts-expect-error: Types are not available
   const actionObjectDiff: undefined | Diff<Action | undefined, Action>[] = diff(
     action,
     initialValues,

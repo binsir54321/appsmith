@@ -420,9 +420,9 @@ export function* duplicateApplicationSaga(
     const isValidResponse: boolean = yield validateResponse(response);
     if (isValidResponse) {
       const application: ApplicationPayload = {
-        // @ts-expect-error: response is of type unknown
+        //tb  // @ts-expect-error: response is of type unknown
         ...response.data,
-        // @ts-expect-error: response is of type unknown
+        //tb  // @ts-expect-error: response is of type unknown
         defaultPageId: getDefaultPageId(response.data.pages),
       };
       yield put({
@@ -459,9 +459,9 @@ export function* changeAppViewAccessSaga(
       yield put({
         type: ReduxActionTypes.CHANGE_APPVIEW_ACCESS_SUCCESS,
         payload: {
-          // @ts-expect-error: response is of type unknown
+          //tb  // @ts-expect-error: response is of type unknown
           id: response.data.id,
-          // @ts-expect-error: response is of type unknown
+          //tb  // @ts-expect-error: response is of type unknown
           isPublic: response.data.isPublic,
         },
       });
@@ -601,9 +601,9 @@ export function* forkApplicationSaga(
     if (isValidResponse) {
       yield put(resetCurrentApplication());
       const application: ApplicationPayload = {
-        // @ts-expect-error: response is of type unknown
+        //tb  // @ts-expect-error: response is of type unknown
         ...response.data,
-        // @ts-expect-error: response is of type unknown
+        //tb  // @ts-expect-error: response is of type unknown
         defaultPageId: getDefaultPageId(response.data.pages),
       };
       yield put({
@@ -677,28 +677,28 @@ export function* importApplicationSaga(
       );
       if (currentWorkspace.length > 0) {
         const {
-          // @ts-expect-error: response is of type unknown
+          //tb  // @ts-expect-error: response is of type unknown
           application: { pages },
-          // @ts-expect-error: response is of type unknown
+          //tb  // @ts-expect-error: response is of type unknown
           isPartialImport,
         } = response.data;
 
-        // @ts-expect-error: response is of type unknown
+        //tb  // @ts-expect-error: response is of type unknown
         yield put(importApplicationSuccess(response.data?.application));
 
         if (isPartialImport) {
           yield put(
             showReconnectDatasourceModal({
-              // @ts-expect-error: response is of type unknown
+              //tb  // @ts-expect-error: response is of type unknown
               application: response.data?.application,
               unConfiguredDatasourceList:
-                // @ts-expect-error: response is of type unknown
+                //tb  // @ts-expect-error: response is of type unknown
                 response?.data.unConfiguredDatasourceList,
               workspaceId: action.payload.workspaceId,
             }),
           );
         } else {
-          // @ts-expect-error: pages is of type any
+          //tb  // @ts-expect-error: pages is of type any
           // TODO: Update route params here
           const defaultPage = pages.filter((eachPage) => !!eachPage.isDefault);
           const pageURL = builderURL({

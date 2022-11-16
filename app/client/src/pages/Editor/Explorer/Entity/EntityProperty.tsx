@@ -129,7 +129,7 @@ export type EntityPropertyProps = {
   step?: number;
 };
 
-/* eslint-disable react/display-name */
+//tb  /* tb eslint-disable react/display-name */
 export const EntityProperty = memo((props: any) => {
   const propertyRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const write = useClipboard(propertyRef);

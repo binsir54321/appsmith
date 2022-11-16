@@ -516,7 +516,6 @@ class ChartComponent extends React.Component<ChartComponentProps> {
   }
 
   render() {
-    //eslint-disable-next-line  @typescript-eslint/no-unused-vars
     const { onDataPointClick, ...rest } = this.props;
     return (
       <CanvasContainer

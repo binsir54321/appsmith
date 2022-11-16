@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//tb  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 import widgetPropertyFns from "!!raw-loader!./derived.js";
 

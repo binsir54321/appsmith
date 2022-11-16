@@ -44,7 +44,7 @@ describe("DynamicTextFieldControl", () => {
         url: "/?showTemplate=true",
         initialState: {
           entities: {
-            // @ts-expect-error: Types are not available
+            //tb  // @ts-expect-error: Types are not available
             plugins: {
               list: [
                 {

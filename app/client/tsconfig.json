@@ -3,7 +3,7 @@
   "compilerOptions": {
     "target": "ES6",
     "lib": ["DOM", "ES6", "DOM.Iterable", "ScriptHost", "ES2016.Array.Include", "es2020.string", "esnext"],
-    "strict": true,
+    "strict": false,
     "outDir": "./out/js/src",
     "allowJs": true,
     "skipLibCheck": true,
@@ -17,7 +17,7 @@
     "noEmit": true,
     "jsx": "react",
     "downlevelIteration": true,
-    "experimentalDecorators": true,
+    "experimentalDecorators": false,
     "importHelpers": true,
     "typeRoots": [
       "./typings",
@@ -28,6 +28,6 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "./src/**/*"
+    "./src1/**/*"
   ]
 }

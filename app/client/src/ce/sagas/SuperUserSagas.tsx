@@ -145,7 +145,7 @@ export function* SendTestEmail(action: ReduxAction<SendTestEmailPayload>) {
         actionElement,
         text: createMessage(
           response.data
-            ? // @ts-expect-error: currentUser can be undefined
+            ? //tb  // @ts-expect-error: currentUser can be undefined
               TEST_EMAIL_SUCCESS(currentUser?.email)
             : TEST_EMAIL_FAILURE,
         ),

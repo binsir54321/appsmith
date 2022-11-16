@@ -101,7 +101,7 @@ function* createApplication() {
 
   userWorkspaces = yield select(getOnboardingWorkspaces);
   const currentUser: User | undefined = yield select(getCurrentUser);
-  // @ts-expect-error: currentUser can be undefined
+  //tb  // @ts-expect-error: currentUser can be undefined
   const currentWorkspaceId = currentUser.currentWorkspaceId;
   let workspace;
   if (!currentWorkspaceId) {
@@ -191,7 +191,7 @@ function* setUpTourAppSaga() {
   });
 
   yield delay(500);
-  // @ts-expect-error: No type declared for getTableWidgetSelector.
+  //tb  // @ts-expect-error: No type declared for getTableWidgetSelector.
   const tableWidget = yield select(getTableWidget);
   yield put(
     batchUpdateMultipleWidgetProperties([

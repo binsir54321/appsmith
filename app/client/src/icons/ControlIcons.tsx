@@ -66,7 +66,7 @@ import EyeIcon from "remixicon-react/EyeLineIcon";
 import EyeOffIcon from "remixicon-react/EyeOffLineIcon";
 import CloseIcon from "remixicon-react/CloseLineIcon";
 
-/* eslint-disable react/display-name */
+//tb  /* tb eslint-disable react/display-name */
 
 export const ControlIcons: {
   [id: string]: JSXElementConstructor<IconProps>;

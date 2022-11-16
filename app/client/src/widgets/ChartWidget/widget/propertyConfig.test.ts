@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-namespace */
+//tb  /* tb eslint-disable @typescript-eslint/no-namespace */
 import { isString, get } from "lodash";
 
 import { styleConfig, contentConfig } from "./propertyConfig";

@@ -495,7 +495,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
     }
     setMoreActionItems(moreActionItems);
     addDeleteOption();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    //tb  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const appIcon = (props.application?.icon ||
@@ -542,7 +542,7 @@ export function ApplicationCard(props: ApplicationCardProps) {
     link.href = getExportAppAPIRoute(applicationId);
     link.id = id;
     document.body.appendChild(link);
-    // @ts-expect-error: Types are not available
+    //tb  // @ts-expect-error: Types are not available
     if (!window.Cypress) {
       link.click();
     }

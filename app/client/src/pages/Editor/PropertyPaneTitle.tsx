@@ -44,7 +44,7 @@ type PropertyPaneTitleProps = {
   }>;
 };
 
-/* eslint-disable react/display-name */
+//tb  /* tb eslint-disable react/display-name */
 const PropertyPaneTitle = memo(function PropertyPaneTitle(
   props: PropertyPaneTitleProps,
 ) {
@@ -141,14 +141,14 @@ const PropertyPaneTitle = memo(function PropertyPaneTitle(
               // TODO(aswathkk): Fix #15970 and focus on search bar
               document
                 .querySelector(".propertyPaneSearch input")
-                // @ts-expect-error: Focus
+                //tb  // @ts-expect-error: Focus
                 ?.focus();
             } else {
               // document
               //   .querySelector(
               //     '.t--property-pane-section-wrapper [tabindex]:not([tabindex="-1"])',
               //   )
-              //   // @ts-expect-error: Focus
+              //   //tb  // @ts-expect-error: Focus
               //   ?.focus();
             }
         },

@@ -157,7 +157,7 @@ export function* createActionSaga(
 
       AnalyticsUtil.logEvent("CREATE_ACTION", {
         id: response.data.id,
-        // @ts-expect-error: name does not exists on type ActionCreateUpdateResponse
+        //tb  // @ts-expect-error: name does not exists on type ActionCreateUpdateResponse
         actionName: response.data.name,
         pageName: pageName,
         ...actionPayload.payload.eventData,
@@ -168,13 +168,13 @@ export function* createActionSaga(
         source: {
           type: ENTITY_TYPE.ACTION,
           id: response.data.id,
-          // @ts-expect-error: name does not exists on type ActionCreateUpdateResponse
+          //tb  // @ts-expect-error: name does not exists on type ActionCreateUpdateResponse
           name: response.data.name,
         },
       });
 
       const newAction = response.data;
-      // @ts-expect-error: type mismatch ActionCreateUpdateResponse vs Action
+      //tb  // @ts-expect-error: type mismatch ActionCreateUpdateResponse vs Action
       yield put(createActionSuccess(newAction));
     }
   } catch (error) {
@@ -319,11 +319,11 @@ export function* updateActionSaga(
     /* NOTE: This  is fix for a missing command config */
     const plugin: Plugin | undefined = yield select(getPlugin, action.pluginId);
     if (action && plugin && plugin.packageName === PluginPackageName.MONGO) {
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       action = fixActionPayloadForMongoQuery(action);
     }
     const response: ApiResponse<Action> = yield ActionAPI.updateAction(
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       action,
     );
 
@@ -478,25 +478,25 @@ function* moveActionSaga(
     const isValidResponse: boolean = yield validateResponse(response);
     const pageName: string = yield select(
       getPageNameByPageId,
-      // @ts-expect-error: response is of type unknown
+      //tb  // @ts-expect-error: response is of type unknown
       response.data.pageId,
     );
     if (isValidResponse) {
       Toaster.show({
-        // @ts-expect-error: response is of type unknown
+        //tb  // @ts-expect-error: response is of type unknown
         text: createMessage(ACTION_MOVE_SUCCESS, response.data.name, pageName),
         variant: Variant.success,
       });
     }
 
     AnalyticsUtil.logEvent("MOVE_API", {
-      // @ts-expect-error: response is of type unknown
+      //tb  // @ts-expect-error: response is of type unknown
       apiName: response.data.name,
       pageName: pageName,
-      // @ts-expect-error: response is of type unknown
+      //tb  // @ts-expect-error: response is of type unknown
       apiID: response.data.id,
     });
-    // @ts-expect-error: response is of type unknown
+    //tb  // @ts-expect-error: response is of type unknown
     yield put(moveActionSuccess(response.data));
   } catch (e) {
     Toaster.show({
@@ -532,7 +532,7 @@ function* copyActionSaga(
     const isValidResponse: boolean = yield validateResponse(response);
     const pageName: string = yield select(
       getPageNameByPageId,
-      // @ts-expect-error: pageId not present on ActionCreateUpdateResponse
+      //tb  // @ts-expect-error: pageId not present on ActionCreateUpdateResponse
       response.data.pageId,
     );
     if (isValidResponse) {
@@ -543,7 +543,7 @@ function* copyActionSaga(
     }
 
     AnalyticsUtil.logEvent("DUPLICATE_API", {
-      // @ts-expect-error: name not present on ActionCreateUpdateResponse
+      //tb  // @ts-expect-error: name not present on ActionCreateUpdateResponse
       apiName: response.data.name,
       pageName: pageName,
       apiID: response.data.id,
@@ -551,18 +551,18 @@ function* copyActionSaga(
 
     // checking if there is existing datasource to be added to the action payload
     const existingDatasource = datasources.find(
-      // @ts-expect-error: datasource not present on ActionCreateUpdateResponse
+      //tb  // @ts-expect-error: datasource not present on ActionCreateUpdateResponse
       (d: Datasource) => d.id === response.data.datasource.id,
     );
 
     let payload = response.data;
 
     if (existingDatasource) {
-      // @ts-expect-error: datasource not present on ActionCreateUpdateResponse
+      //tb  // @ts-expect-error: datasource not present on ActionCreateUpdateResponse
       payload = { ...payload, datasource: existingDatasource };
     }
 
-    // @ts-expect-error: type mismatch Action vs ActionCreateUpdateResponse
+    //tb  // @ts-expect-error: type mismatch Action vs ActionCreateUpdateResponse
     yield put(copyActionSuccess(payload));
   } catch (e) {
     const actionName = actionObject ? actionObject.name : "";
@@ -620,7 +620,7 @@ export function* refactorActionName(
         },
       });
       if (currentPageId === pageId) {
-        // @ts-expect-error: refactorResponse is of type unknown
+        //tb  // @ts-expect-error: refactorResponse is of type unknown
         yield updateCanvasWithDSL(refactorResponse.data, pageId, layoutId);
       } else {
         yield put(fetchActionsForPage(pageId));
@@ -945,13 +945,13 @@ function* executeCommandSaga(actionPayload: ReduxAction<SlashCommandPayload>) {
     case SlashCommand.NEW_QUERY:
       const datasource = get(actionPayload, "payload.args.datasource");
       yield put(createNewQueryAction(pageId, "QUICK_COMMANDS", datasource.id));
-      // @ts-expect-error: QUERY is of type unknown
+      //tb  // @ts-expect-error: QUERY is of type unknown
       const QUERY = yield take(ReduxActionTypes.CREATE_ACTION_SUCCESS);
       if (callback) callback(`{{${QUERY.payload.name}.data}}`);
       break;
     case SlashCommand.NEW_API:
       yield put(createNewApiAction(pageId, "QUICK_COMMANDS"));
-      // @ts-expect-error: QUERY is of type unknown
+      //tb  // @ts-expect-error: QUERY is of type unknown
       const API = yield take(ReduxActionTypes.CREATE_ACTION_SUCCESS);
       if (callback) callback(`{{${API.payload.name}.data}}`);
       break;

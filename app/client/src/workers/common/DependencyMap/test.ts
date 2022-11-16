@@ -17,15 +17,15 @@ const widgetConfigMap = {};
   [ButtonWidget, BUTTON_WIDGET_CONFIG],
   [SelectWidget, SELECT_WIDGET_CONFIG],
 ].map(([, config]) => {
-  // @ts-expect-error: Types are not available
+  //tb  // @ts-expect-error: Types are not available
   if (config.type && config.properties) {
-    // @ts-expect-error: Types are not available
+    //tb  // @ts-expect-error: Types are not available
     widgetConfigMap[config.type] = {
-      // @ts-expect-error: properties does not exists
+      //tb  // @ts-expect-error: properties does not exists
       defaultProperties: config.properties.default,
-      // @ts-expect-error: properties does not exists
+      //tb  // @ts-expect-error: properties does not exists
       derivedProperties: config.properties.derived,
-      // @ts-expect-error: properties does not exists
+      //tb  // @ts-expect-error: properties does not exists
       metaProperties: config.properties.meta,
     };
   }

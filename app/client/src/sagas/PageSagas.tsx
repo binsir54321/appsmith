@@ -795,7 +795,7 @@ export function* updateWidgetNameSaga(
         tabName: action.payload.newName,
       };
       // Shallow copy the parent widget so that we can update the properties
-      // @ts-expect-error parentId can be undefined
+      //tb  // @ts-expect-error parentId can be undefined
       const parent = { ...widgets[parentId] };
       // Update the tabs property of the parent tabs widget
       const tabToChange = tabs.find(
@@ -812,7 +812,7 @@ export function* updateWidgetNameSaga(
         },
       };
       // replace the parent widget in the canvas widgets
-      // @ts-expect-error parentId can be undefined
+      //tb  // @ts-expect-error parentId can be undefined
       widgets[parentId] = parent;
       // Update and save the new widgets
       //TODO Identify the updated widgets and pass the values
@@ -831,9 +831,9 @@ export function* updateWidgetNameSaga(
         const request: UpdateWidgetNameRequest = {
           newName: action.payload.newName,
           oldName: widgetName,
-          // @ts-expect-error: pageId can be undefined
+          //tb  // @ts-expect-error: pageId can be undefined
           pageId,
-          // @ts-expect-error: layoutId can be undefined
+          //tb  // @ts-expect-error: layoutId can be undefined
           layoutId,
         };
         const response: UpdateWidgetNameResponse = yield call(
@@ -842,7 +842,7 @@ export function* updateWidgetNameSaga(
         );
         const isValidResponse: boolean = yield validateResponse(response);
         if (isValidResponse) {
-          // @ts-expect-error: pageId can be undefined
+          //tb  // @ts-expect-error: pageId can be undefined
           yield updateCanvasWithDSL(response.data, pageId, layoutId);
           yield put(updateWidgetNameSuccess());
           // Add this to the page DSLs for entity explorer
@@ -981,7 +981,7 @@ export function* setPageOrderSaga(action: ReduxAction<SetPageOrderRequest>) {
       yield put({
         type: ReduxActionTypes.SET_PAGE_ORDER_SUCCESS,
         payload: {
-          // @ts-expect-error: response.data is of type unknown
+          //tb  // @ts-expect-error: response.data is of type unknown
           pages: response.data.pages,
         },
       });

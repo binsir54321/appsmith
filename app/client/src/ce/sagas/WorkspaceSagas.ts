@@ -285,7 +285,7 @@ export function* createWorkspaceSaga(
     }
 
     // get created workspace in focus
-    // @ts-expect-error: response is of type unknown
+    //tb  // @ts-expect-error: response is of type unknown
     const workspaceId = response.data.id;
     history.push(`${window.location.pathname}#${workspaceId}`);
   } catch (error) {
@@ -319,7 +319,7 @@ export function* uploadWorkspaceLogoSaga(
           type: ReduxActionTypes.SAVE_WORKSPACE_SUCCESS,
           payload: {
             id: currentWorkspace[0].id,
-            // @ts-expect-error: response is of type unknown
+            //tb  // @ts-expect-error: response is of type unknown
             logoUrl: response.data.logoUrl,
           },
         });
@@ -352,7 +352,7 @@ export function* deleteWorkspaceLogoSaga(action: ReduxAction<{ id: string }>) {
           type: ReduxActionTypes.SAVE_WORKSPACE_SUCCESS,
           payload: {
             id: currentWorkspace[0].id,
-            // @ts-expect-error: response is of type unknown
+            //tb  // @ts-expect-error: response is of type unknown
             logoUrl: response.data.logoUrl,
           },
         });

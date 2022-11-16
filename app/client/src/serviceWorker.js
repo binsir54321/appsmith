@@ -26,7 +26,7 @@ const regexMap = {
   providers: new RegExp(/v1\/marketplace\/(providers|templates)/),
 };
 
-/* eslint-disable no-restricted-globals */
+//tb  /* tb eslint-disable no-restricted-globals */
 const toPrecache = self.__WB_MANIFEST.filter(
   (file) => !file.url.includes("index.html"),
 );

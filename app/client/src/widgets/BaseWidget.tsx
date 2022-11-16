@@ -174,12 +174,10 @@ abstract class BaseWidget<
     if (resetChildrenMetaProperty) resetChildrenMetaProperty(widgetId);
   }
 
-  /* eslint-disable @typescript-eslint/no-empty-function */
-  /* eslint-disable @typescript-eslint/no-unused-vars */
   componentDidUpdate(prevProps: T) {}
 
   componentDidMount(): void {}
-  /* eslint-enable @typescript-eslint/no-empty-function */
+
 
   getComponentDimensions = () => {
     return this.calculateWidgetBounds(

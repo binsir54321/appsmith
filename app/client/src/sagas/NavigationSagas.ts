@@ -67,7 +67,7 @@ function* storeStateOfPath(path: string, hash?: string) {
   const selectors = FocusElementsConfig[entityInfo.entity];
   const state: Record<string, any> = {};
   for (const selectorInfo of selectors) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //tb  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     state[selectorInfo.name] = yield select(selectorInfo.selector);
   }

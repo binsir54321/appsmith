@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-types */
+//tb  /* tb eslint-disable @typescript-eslint/ban-types */
 import { DataTree, DataTreeEntity } from "entities/DataTree/dataTreeFactory";
 import _ from "lodash";
 import {

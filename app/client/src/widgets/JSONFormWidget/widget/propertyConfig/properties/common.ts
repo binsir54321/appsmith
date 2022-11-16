@@ -88,7 +88,7 @@ function accessorValidation(
   }
 
   const existingKeys = (Object.values(schema) || []).map(
-    // @ts-expect-error: Types are not available
+    //tb  // @ts-expect-error: Types are not available
     (schemaItem) => schemaItem.name,
   );
 

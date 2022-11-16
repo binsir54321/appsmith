@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
+//tb  /* tb eslint-disable @typescript-eslint/ban-ts-comment */
 // Heavily inspired from https://github.com/codemirror/CodeMirror/blob/master/addon/tern/tern.js
 import tern, { Server, Def } from "tern";
 import ecma from "constants/defs/ecmascript.json";
@@ -23,7 +23,7 @@ import { AutocompleteSorter } from "./AutocompleteSortRules";
 import { getCompletionsForKeyword } from "./keywordCompletion";
 
 const DEFS: Def[] = [
-  // @ts-expect-error: Types are not available
+  //tb  // @ts-expect-error: Types are not available
   ecma,
   browser,
   GLOBAL_FUNCTIONS,
@@ -197,7 +197,7 @@ class TernServer {
       // Need to remove previous def as def aren't overwritten
       this.removeDef(name);
       // addDefs doesn't work for [def] and instead works with single def
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       this.server.addDefs(def);
     } else {
       this.server.deleteDefs(name);
@@ -379,10 +379,10 @@ class TernServer {
       if (data.url) {
         tip.appendChild(document.createTextNode(" "));
         const child = tip.appendChild(this.elt("a", null, "[docs]"));
-        // @ts-expect-error: Types are not available
+        //tb  // @ts-expect-error: Types are not available
         child.href = data.url;
 
-        // @ts-expect-error: Types are not available
+        //tb  // @ts-expect-error: Types are not available
         child.target = "_blank";
       }
       this.tempTooltip(cm, tip);
@@ -399,7 +399,7 @@ class TernServer {
     const doc = this.findDoc(cm.getDoc());
     const request = this.buildRequest(doc, query, pos);
 
-    // @ts-expect-error: Types are not available
+    //tb  // @ts-expect-error: Types are not available
     this.server.request(request, callbackFn);
   }
 
@@ -541,7 +541,7 @@ class TernServer {
     this.server.request(
       {
         files: [
-          // @ts-expect-error: Types are not available
+          //tb  // @ts-expect-error: Types are not available
           {
             type: "full",
             name: doc.name,
@@ -743,12 +743,12 @@ class TernServer {
   tempTooltip(cm: CodeMirror.Editor, content: HTMLElement | string) {
     if (cm.state.ternTooltip) this.remove(cm.state.ternTooltip);
     if (cm.state.completionActive) {
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       cm.closeHint();
     }
     const where = cm.cursorCoords();
     const tip = (cm.state.ternTooltip = this.makeTooltip(
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       where.right + 1,
       where.bottom,
       content,
@@ -769,7 +769,7 @@ class TernServer {
     });
     CodeMirror.on(tip, "mouseout", function(e: MouseEvent) {
       const related = e.relatedTarget;
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       if (!related || !CodeMirror.contains(tip, related)) {
         if (old) clear();
         else mouseOnTip = false;

@@ -44,7 +44,7 @@ export const getPropertiesToUpdateForReset = (
         .filter((propertyKey) => !propertiesToIgnore.includes(propertyKey))
         .map((propertyKey) => {
           if (
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            //tb  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             THEME_BINDING_REGEX.test(stylesheetValue[propertyKey]) &&
             stylesheetValue[propertyKey] !== widget[propertyKey]
@@ -129,11 +129,11 @@ export const getPropertiesToUpdateForReset = (
         ["submitButtonStyles", "resetButtonStyles"].map((buttonStyleKey) => {
           Object.keys(stylesheetValue[buttonStyleKey]).map((propertyKey) => {
             const buttonStylesheetValue =
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              //tb  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               stylesheetValue[buttonStyleKey][propertyKey];
 
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            //tb  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             if (
               THEME_BINDING_REGEX.test(buttonStylesheetValue) &&

@@ -100,7 +100,7 @@ export const commandsHelper: HintHelper = (editor, data: DataTree) => {
                 }
               });
               try {
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                //tb  // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 const { data, render, ...rest } = selected;
                 const { ENTITY_TYPE, name, pluginType } = data as any;
                 AnalyticsUtil.logEvent("SLASH_COMMAND", {
@@ -136,7 +136,7 @@ export const commandsHelper: HintHelper = (editor, data: DataTree) => {
         });
         return true;
       }
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       editor.closeHint();
       return false;
     },

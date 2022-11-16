@@ -432,7 +432,7 @@ function* executeTriggerRequestSaga(
     // When error occurs in execution of triggers,
     // a success: false is sent to reject the promise
 
-    // @ts-expect-error: reason is of type string
+    //tb  // @ts-expect-error: reason is of type string
     responsePayload.data.reason = { message: error.message };
     responsePayload.success = false;
   }
@@ -524,7 +524,7 @@ export function* validateProperty(
   props: WidgetProps,
 ) {
   const unevalTree: DataTree = yield select(getUnevaluatedDataTree);
-  // @ts-expect-error: We have a typeMismatch for validationPaths
+  //tb  // @ts-expect-error: We have a typeMismatch for validationPaths
   const validation = unevalTree[props.widgetName].validationPaths[property];
   const response: unknown = yield call(
     evalWorker.request,

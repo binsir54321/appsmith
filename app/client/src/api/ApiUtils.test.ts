@@ -29,12 +29,12 @@ describe("axios api interceptors", () => {
       const response: AxiosResponse = {
         data: "Test data",
         headers: {
-          // @ts-expect-error: content-length should be string
+          //tb  // @ts-expect-error: content-length should be string
           "content-length": 123,
         },
         config: {
           url: "https://app.appsmith.com/v1/api/actions/execute",
-          // @ts-expect-error: type mismatch
+          //tb  // @ts-expect-error: type mismatch
           timer: 0,
         },
       };

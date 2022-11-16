@@ -5,7 +5,7 @@ import { ReactComponent as SuccessIcon } from "assets/icons/alert/success.svg";
 import { ReactComponent as ErrorIcon } from "assets/icons/alert/error.svg";
 import { ReactComponent as WarningIcon } from "assets/icons/alert/warning.svg";
 
-/* eslint-disable react/display-name */
+//tb  /* tb eslint-disable react/display-name */
 
 export const AlertIcons: {
   [id: string]: JSXElementConstructor<IconProps>;

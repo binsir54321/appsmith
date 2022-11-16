@@ -11,7 +11,7 @@ import {
 import { RenderModes } from "constants/WidgetConstants";
 
 describe("evaluateSync", () => {
-  // @ts-expect-error: meta property not provided
+  //tb  // @ts-expect-error: meta property not provided
   const widget: DataTreeWidget = {
     bottomRow: 0,
     isLoading: false,
@@ -59,7 +59,7 @@ describe("evaluateSync", () => {
     expect(response.result).toBe("1\n2\n3");
   });
   it("throws error for undefined js", () => {
-    // @ts-expect-error: Types are not available
+    //tb  // @ts-expect-error: Types are not available
     expect(() => evaluate(undefined, {})).toThrow(TypeError);
   });
   it("Returns for syntax errors", () => {
@@ -237,7 +237,7 @@ describe("evaluateAsync", () => {
 
 describe("isFunctionAsync", () => {
   it("identifies async functions", () => {
-    // eslint-disable-next-line @typescript-eslint/ban-types
+    //tb  // eslint-disable-next-line @typescript-eslint/ban-types
     const cases: Array<{ script: Function | string; expected: boolean }> = [
       {
         script: () => {

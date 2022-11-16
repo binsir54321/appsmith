@@ -76,7 +76,7 @@ export const promisifyAction = (
             },
           });
           for (const entity in globalData) {
-            // @ts-expect-error: Types are not available
+            //tb  // @ts-expect-error: Types are not available
             self[entity] = globalData[entity];
           }
 

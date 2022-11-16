@@ -8,7 +8,7 @@ import { EditorTheme } from "components/editorComponents/CodeEditor/EditorConfig
 import { PropertyPaneControlConfig } from "constants/PropertyControlConstants";
 import { CodeEditorExpected } from "components/editorComponents/CodeEditor";
 
-// eslint-disable-next-line @typescript-eslint/ban-types
+//tb  // eslint-disable-next-line @typescript-eslint/ban-types
 class BaseControl<P extends ControlProps, S = {}> extends Component<P, S> {
   updateProperty(
     propertyName: string,
@@ -47,13 +47,13 @@ class BaseControl<P extends ControlProps, S = {}> extends Component<P, S> {
   }
 
   // Checks whether a particular value can be displayed UI from JS edit mode
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  //tb  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   static canDisplayValueInUI(config: ControlData, value: any): boolean {
     return false;
   }
 
   // Only applicable for JSONFormComputeControl & ComputeTablePropertyControl
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  //tb  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   static getInputComputedValue(value: string, widgetName: string): string {
     return "";
   }

@@ -49,7 +49,7 @@ class WorkerStub {
   onmessage: CallableFunction;
   constructor(stringUrl: string) {
     this.url = stringUrl;
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    //tb  // eslint-disable-next-line @typescript-eslint/no-empty-function
     this.onmessage = () => {};
   }
 

@@ -215,9 +215,9 @@ export const updateContainers = (dsl: ContainerWidgetProps<WidgetProps>) => {
         canExtend: false,
         isVisible: true,
       };
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       delete canvas.dynamicBindings;
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       delete canvas.dynamicProperties;
       if (canvas.children && canvas.children.length > 0)
         canvas.children = canvas.children.map(updateContainers);

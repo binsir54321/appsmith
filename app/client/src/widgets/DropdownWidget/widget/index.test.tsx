@@ -76,7 +76,7 @@ describe("<DropdownWidget />", () => {
       onFilterUpdate: "mock-update",
       updateWidgetMetaProperty: jest.fn(),
     };
-    // @ts-expect-error: type mismatch
+    //tb  // @ts-expect-error: type mismatch
     renderDropdownWidget(mockDataWithEmptyOptions);
 
     const selectElement = screen.getByText("-- Select --");

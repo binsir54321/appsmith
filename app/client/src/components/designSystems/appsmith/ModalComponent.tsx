@@ -75,7 +75,7 @@ export type ModalComponentProps = {
   portalClassName?: string;
 };
 
-/* eslint-disable react/display-name */
+//tb  /* tb eslint-disable react/display-name */
 export function ModalComponent(props: ModalComponentProps) {
   const modalContentRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(
     null,

@@ -102,7 +102,7 @@ export const isQueryLimitUpdated = createSelector(getQueryAction, (query) => {
   if (query) {
     let body = query.config.actionConfiguration.body;
     if (body) {
-      // eslint-disable-next-line no-console
+      //tb  // eslint-disable-next-line no-console
       const regex = /SELECT \* FROM user_data ORDER BY id LIMIT 10;/gi;
       // Replacing new line characters
       body = body.replace(/(?:\r\n|\r|\n)/g, "");

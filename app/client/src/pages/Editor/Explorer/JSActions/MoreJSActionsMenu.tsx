@@ -163,7 +163,7 @@ export function MoreJSCollectionsMenu(props: EntityContextMenuProps) {
             the object is null, but that is not the case, and we need an
             instance of the editor to pass to autoIndentCode function
             */
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            //tb  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             const editor = document.querySelector(".CodeMirror").CodeMirror;
             autoIndentCode(editor);

@@ -438,7 +438,7 @@ export function* fetchFeatureFlags() {
     const response: ApiResponse = yield call(UserApi.fetchFeatureFlags);
     const isValidResponse: boolean = yield validateResponse(response);
     if (isValidResponse) {
-      // @ts-expect-error: response.data is of type unknown
+      //tb  // @ts-expect-error: response.data is of type unknown
       yield put(fetchFeatureFlagsSuccess(response.data));
     }
   } catch (error) {

@@ -106,7 +106,7 @@ export function PageTabsContainer(props: AppViewerHeaderProps) {
       setShowScrollArrows();
     }
   }, [tabsRef.current, isScrollingLeft]);
-  // eslint-disable-next-line
+  //tb  // eslint-disable-next-line
   const [_intervalRef, _rafRef, requestAF] = useThrottledRAF(scroll, 10);
 
   const stopScrolling = () => {

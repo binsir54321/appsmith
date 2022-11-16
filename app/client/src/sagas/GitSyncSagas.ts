@@ -182,14 +182,14 @@ function* connectToGitSaga(action: ConnectToGitReduxAction) {
     );
 
     if (isValidResponse) {
-      // @ts-expect-error: response is of type unknown
+      //tb  // @ts-expect-error: response is of type unknown
       yield put(connectToGitSuccess(response?.data));
       yield put(fetchPage(currentPageId));
       if (action.onSuccessCallback) {
-        // @ts-expect-error: response is of type unknown
+        //tb  // @ts-expect-error: response is of type unknown
         action.onSuccessCallback(response?.data);
       }
-      // @ts-expect-error: response is of type unknown
+      //tb  // @ts-expect-error: response is of type unknown
       const branch = response?.data?.gitApplicationMetadata?.branchName;
 
       const updatedPath = addBranchParam(branch);
@@ -248,7 +248,7 @@ function* fetchGlobalGitConfig() {
     );
 
     if (isValidResponse) {
-      // @ts-expect-error: response is of type unknown
+      //tb  // @ts-expect-error: response is of type unknown
       yield put(fetchGlobalGitConfigSuccess(response?.data));
     }
   } catch (error) {
@@ -363,7 +363,7 @@ function* fetchLocalGitConfig() {
     );
 
     if (isValidResponse) {
-      // @ts-expect-error: response is of type unknown
+      //tb  // @ts-expect-error: response is of type unknown
       yield put(fetchLocalGitConfigSuccess(response?.data));
     }
   } catch (error) {
@@ -426,7 +426,7 @@ function* updateLocalGitConfig(action: ReduxAction<GitConfig>) {
     );
 
     if (isValidResponse) {
-      // @ts-expect-error: response is of type unknown
+      //tb  // @ts-expect-error: response is of type unknown
       yield put(updateLocalGitConfigSuccess(response?.data));
       yield put(fetchLocalGitConfigInit());
       Toaster.show({
@@ -463,7 +463,7 @@ function* fetchGitStatusSaga() {
       getLogToSentryFromResponse(response),
     );
     if (isValidResponse) {
-      // @ts-expect-error: response is of type unknown
+      //tb  // @ts-expect-error: response is of type unknown
       yield put(fetchGitStatusSuccess(response?.data));
     }
   } catch (error) {
@@ -546,11 +546,11 @@ function* fetchMergeStatusSaga(action: ReduxAction<MergeStatusPayload>) {
       getLogToSentryFromResponse(response),
     );
     if (isValidResponse) {
-      // @ts-expect-error: response is of type unknown
+      //tb  // @ts-expect-error: response is of type unknown
       yield put(fetchMergeStatusSuccess(response?.data));
     }
   } catch (error) {
-    // @ts-expect-error: fetchMergeStatusFailure expects string
+    //tb  // @ts-expect-error: fetchMergeStatusFailure expects string
     yield put(fetchMergeStatusFailure({ error, show: false }));
     if (!response || response?.responseMeta?.success) {
       throw error;
@@ -575,7 +575,7 @@ function* gitPullSaga(
     const currentBranch: string | undefined = yield select(getCurrentGitBranch);
     const currentPageId: string = yield select(getCurrentPageId);
     if (isValidResponse) {
-      // @ts-expect-error: response is of type unknown
+      //tb  // @ts-expect-error: response is of type unknown
       const { mergeStatus } = response?.data;
       yield put(gitPullSuccess(mergeStatus));
       yield put(
@@ -699,7 +699,7 @@ function* importAppFromGitSaga(action: ConnectToGitReduxAction) {
         (el: Workspace) => el.id === workspaceIdForImport,
       );
       if (currentWorkspace.length > 0) {
-        // @ts-expect-error: response can be undefined
+        //tb  // @ts-expect-error: response can be undefined
         const { application: app, isPartialImport } = response?.data;
         yield put(importAppViaGitSuccess()); // reset flag for loader
         yield put(setIsGitSyncModalOpen({ isOpen: false }));
@@ -707,7 +707,7 @@ function* importAppFromGitSaga(action: ConnectToGitReduxAction) {
         if (isPartialImport) {
           yield put(
             showReconnectDatasourceModal({
-              // @ts-expect-error: Type mismatch
+              //tb  // @ts-expect-error: Type mismatch
               application: response?.data?.application,
               unConfiguredDatasourceList: (response as any)?.data
                 .unConfiguredDatasourceList,
@@ -718,7 +718,7 @@ function* importAppFromGitSaga(action: ConnectToGitReduxAction) {
           let pageId = "";
           if (app.pages && app.pages.length > 0) {
             const defaultPage = app.pages.find(
-              // @ts-expect-error: eachPage is any
+              //tb  // @ts-expect-error: eachPage is any
               (eachPage) => !!eachPage.isDefault,
             );
             pageId = defaultPage ? defaultPage.id : "";
@@ -773,18 +773,18 @@ export function* getSSHKeyPairSaga(action: GetSSHKeyPairReduxAction) {
     );
     const isValidResponse: boolean = yield validateResponse(response, false);
     if (isValidResponse) {
-      // @ts-expect-error: response.data type mismatch
+      //tb  // @ts-expect-error: response.data type mismatch
       yield put(getSSHKeyPairSuccess(response.data));
       if (action.onSuccessCallback) {
-        // @ts-expect-error: response type mismatch
+        //tb  // @ts-expect-error: response type mismatch
         action.onSuccessCallback(response);
       }
     }
   } catch (error) {
-    // @ts-expect-error: getSSHKeyPairError expects string
+    //tb  // @ts-expect-error: getSSHKeyPairError expects string
     yield put(getSSHKeyPairError({ error, show: false }));
     if (action.onErrorCallback) {
-      // @ts-expect-error: onErrorCallback expects string
+      //tb  // @ts-expect-error: onErrorCallback expects string
       action.onErrorCallback(error);
     }
   }
@@ -809,7 +809,7 @@ export function* generateSSHKeyPairSaga(action: GenerateSSHKeyPairReduxAction) {
       response?.responseMeta?.status === 500,
     );
     if (isValidResponse) {
-      // @ts-expect-error: response.data type mismatch
+      //tb  // @ts-expect-error: response.data type mismatch
       yield put(generateSSHKeyPairSuccess(response?.data));
       if (action.onSuccessCallback) {
         action.onSuccessCallback(
@@ -819,7 +819,7 @@ export function* generateSSHKeyPairSaga(action: GenerateSSHKeyPairReduxAction) {
     }
   } catch (error) {
     if (action.onErrorCallback) {
-      // @ts-expect-error: onErrorCallback expects string
+      //tb  // @ts-expect-error: onErrorCallback expects string
       action.onErrorCallback(error);
     }
     yield call(handleRepoLimitReachedError, response);

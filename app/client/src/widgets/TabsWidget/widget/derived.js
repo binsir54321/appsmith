@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars*/
+//tb  /* tb eslint-disable @typescript-eslint/no-unused-vars*/
 export default {
   getSelectedTab: (props, moment, _) => {
     if (props.selectedTabWidgetId) {

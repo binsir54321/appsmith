@@ -297,7 +297,7 @@ class CodeEditor extends Component<Props, State> {
         options.foldGutter = true;
         gutters.add("CodeMirror-linenumbers");
         gutters.add("CodeMirror-foldgutter");
-        // @ts-expect-error: Types are not available
+        //tb  // @ts-expect-error: Types are not available
         options.foldOptions = {
           widget: () => {
             return "\u002E\u002E\u002E";
@@ -314,7 +314,7 @@ class CodeEditor extends Component<Props, State> {
         options.value = inputValue;
       }
 
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       options.finishInit = function(
         this: CodeEditor,
         editor: CodeMirror.Editor,
@@ -490,7 +490,7 @@ class CodeEditor extends Component<Props, State> {
     this.editor.off("postPick", () =>
       this.handleAutocompleteVisibility(this.editor),
     );
-    // @ts-expect-error: Types are not available
+    //tb  // @ts-expect-error: Types are not available
     this.editor.closeHint();
   }
 
@@ -782,7 +782,7 @@ class CodeEditor extends Component<Props, State> {
     if (isModifierKey(key)) return;
     const code = `${event.ctrlKey ? "Ctrl+" : ""}${event.code}`;
     if (isCloseKey(code) || isCloseKey(key)) {
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       cm.closeHint();
       return;
     }

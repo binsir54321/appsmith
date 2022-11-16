@@ -72,7 +72,7 @@ export function PopperDragHandle() {
   );
 }
 
-/* eslint-disable react/display-name */
+//tb  /* tb eslint-disable react/display-name */
 export default (props: PopperProps) => {
   const contentRef = useRef(null);
   const popperIdRef = useRef(generateReactKey());

@@ -358,7 +358,7 @@ class DocumentationSearch extends React.Component<Props, State> {
   }
 
   onSearchValueChange = (event: SyntheticEvent<HTMLInputElement, Event>) => {
-    // @ts-expect-error: value is missing
+    //tb  // @ts-expect-error: value is missing
     const value = event.target.value;
     if (value === "" && this.state.showResults) {
       this.setState({

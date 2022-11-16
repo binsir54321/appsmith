@@ -208,7 +208,7 @@ export interface ScrollNavControlProps {
 // }
 
 function TabsComponent(props: TabsComponentProps) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  //tb  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { onTabChange, tabs, width, ...remainingProps } = props;
   const tabContainerRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(
     null,
@@ -251,7 +251,7 @@ function TabsComponent(props: TabsComponentProps) {
     },
     [tabsRef.current],
   );
-  // eslint-disable-next-line
+  //tb  // eslint-disable-next-line
   // const [_intervalRef, _rafRef, requestAF] = useThrottledRAF(scroll, 10);
 
   // useEffect(() => {

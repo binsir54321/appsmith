@@ -1,4 +1,4 @@
-// @ts-expect-error: loader types not available
+//tb  // @ts-expect-error: loader types not available
 import widgetPropertyFns from "!!raw-loader!./derived.js";
 
 // TODO(abhinav):

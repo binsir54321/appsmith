@@ -28,7 +28,7 @@ describe(".useDeepEffect", () => {
 
   it("production mode there are no errors thrown", () => {
     const env = process.env.NODE_ENV;
-    // @ts-expect-error: Types are not available
+    //tb  // @ts-expect-error: Types are not available
     process.env.NODE_ENV = "production";
     renderHook(() =>
       useDeepEffect(() => {
@@ -40,7 +40,7 @@ describe(".useDeepEffect", () => {
         "";
       }, []),
     );
-    // @ts-expect-error: Types are not available
+    //tb  // @ts-expect-error: Types are not available
     process.env.NODE_ENV = env;
   });
 

@@ -1749,9 +1749,9 @@ function* widgetBatchUpdatePropertySaga() {
   );
 
   while (true) {
-    // @ts-expect-error: Type mismatch
+    //tb  // @ts-expect-error: Type mismatch
     const action: unknown = yield take(batchUpdateWidgetPropertyChannel);
-    // @ts-expect-error: Type mismatch
+    //tb  // @ts-expect-error: Type mismatch
     yield call(batchUpdateWidgetPropertySaga, action);
   }
 }

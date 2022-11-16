@@ -333,7 +333,7 @@ const RangeSliderComponent = (props: RangeSliderComponentProps) => {
           thumbIndex.current = -1;
         }}
         onTouchStartCapture={handleTrackMouseDownCapture}
-        // @ts-expect-error: MutableRefObject not assignable to Ref
+        //tb  // @ts-expect-error: MutableRefObject not assignable to Ref
         ref={container}
         size={sliderSize}
       >
@@ -370,7 +370,7 @@ const RangeSliderComponent = (props: RangeSliderComponentProps) => {
             onMouseDown={(event) => handleThumbMouseDown(event, 0)}
             position={positions[0]}
             ref={(node) => {
-              // @ts-expect-error: HTMLDivElement
+              //tb  // @ts-expect-error: HTMLDivElement
               thumbs.current[0] = node;
             }}
             showTooltipOnHover={hovered}
@@ -387,7 +387,7 @@ const RangeSliderComponent = (props: RangeSliderComponentProps) => {
             onMouseDown={(event) => handleThumbMouseDown(event, 1)}
             position={positions[1]}
             ref={(node) => {
-              // @ts-expect-error: HTMLDivElement
+              //tb  // @ts-expect-error: HTMLDivElement
               thumbs.current[1] = node;
             }}
             showTooltipOnHover={hovered}

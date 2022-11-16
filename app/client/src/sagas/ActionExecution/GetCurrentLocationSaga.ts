@@ -66,7 +66,7 @@ function* successCallbackHandler() {
   if (successChannel) {
     while (true) {
       const payload: unknown = yield take(successChannel);
-      // @ts-expect-error: payload is unknown
+      //tb  // @ts-expect-error: payload is unknown
       const { callback, eventType, location, triggerMeta } = payload;
       const currentLocation = extractGeoLocation(location);
       yield put(setUserCurrentGeoLocation(currentLocation));
@@ -87,7 +87,7 @@ function* errorCallbackHandler() {
   if (errorChannel) {
     while (true) {
       const payload: unknown = yield take(errorChannel);
-      // @ts-expect-error: payload is unknown
+      //tb  // @ts-expect-error: payload is unknown
       const { callback, error, eventType, triggerMeta } = payload;
       if (callback) {
         yield call(executeAppAction, {

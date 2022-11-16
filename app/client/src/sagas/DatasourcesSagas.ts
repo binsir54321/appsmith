@@ -172,7 +172,7 @@ export function* addMockDbToDatasources(actionPayload: addMockDb) {
       yield put({
         type: ReduxActionTypes.FETCH_PLUGINS_REQUEST,
       });
-      // @ts-expect-error: response is of type unknown
+      //tb  // @ts-expect-error: response is of type unknown
       yield call(checkAndGetPluginFormConfigsSaga, response.data.pluginId);
       const isGeneratePageInitiator = getIsGeneratePageInitiator(
         isGeneratePageMode,
@@ -183,7 +183,7 @@ export function* addMockDbToDatasources(actionPayload: addMockDb) {
           generateTemplateFormURL({
             pageId,
             params: {
-              // @ts-expect-error: response.data is of type unknown
+              //tb  // @ts-expect-error: response.data is of type unknown
               datasourceId: response.data.id,
             },
           }),
@@ -634,7 +634,7 @@ function* createDatasourceFromFormSaga(
     );
 
     const payload = merge(initialValues, actionPayload.payload);
-    // @ts-expect-error: isConfigured does not exists on type Payload
+    //tb  // @ts-expect-error: isConfigured does not exists on type Payload
     payload.isConfigured = false;
 
     const response: ApiResponse<Datasource> = yield DatasourcesApi.createDatasource(
@@ -682,7 +682,7 @@ function* updateDraftsSaga() {
   if (!values.id) return;
   const datasource: Datasource | undefined = yield select(
     getDatasource,
-    // @ts-expect-error: values is of type unknown
+    //tb  // @ts-expect-error: values is of type unknown
     values.id,
   );
   if (equal(values, datasource)) {
@@ -695,7 +695,7 @@ function* updateDraftsSaga() {
       type: ReduxActionTypes.UPDATE_DATASOURCE_DRAFT,
       payload: { id: values.id, draft: values },
     });
-    // @ts-expect-error: values is of type unknown
+    //tb  // @ts-expect-error: values is of type unknown
     yield put(updateReplayEntity(values.id, values, ENTITY_TYPE.DATASOURCE));
   }
 }
@@ -738,7 +738,7 @@ function* changeDatasourceSaga(
       }),
     );
   yield put(
-    // @ts-expect-error: data is of type unknown
+    //tb  // @ts-expect-error: data is of type unknown
     updateReplayEntity(data.id, _.omit(data, ["name"]), ENTITY_TYPE.DATASOURCE),
   );
 }
@@ -809,7 +809,7 @@ function* storeAsDatasourceSaga() {
   const createDatasourceSuccessAction: unknown = yield take(
     ReduxActionTypes.CREATE_DATASOURCE_SUCCESS,
   );
-  // @ts-expect-error: createDatasourceSuccessAction is of type unknown
+  //tb  // @ts-expect-error: createDatasourceSuccessAction is of type unknown
   const createdDatasource = createDatasourceSuccessAction.payload;
 
   // Update action to have this datasource
@@ -1022,14 +1022,14 @@ function* executeDatasourceQuerySaga(
       yield put({
         type: ReduxActionTypes.EXECUTE_DATASOURCE_QUERY_SUCCESS,
         payload: {
-          // @ts-expect-error: we don't know what the response will be
+          //tb  // @ts-expect-error: we don't know what the response will be
           data: response.data?.trigger,
           datasourceId: action.payload.datasourceId,
         },
       });
     }
     if (action.onSuccessCallback) {
-      // @ts-expect-error: type mismatch for response
+      //tb  // @ts-expect-error: type mismatch for response
       action.onSuccessCallback(response);
     }
   } catch (error) {
@@ -1040,7 +1040,7 @@ function* executeDatasourceQuerySaga(
       },
     });
     if (action.onErrorCallback) {
-      // @ts-expect-error: onErrorCallback expects string
+      //tb  // @ts-expect-error: onErrorCallback expects string
       action.onErrorCallback(error);
     }
   }

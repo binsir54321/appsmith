@@ -218,7 +218,7 @@ const SliderComponent = (props: SliderComponentProps) => {
         labelPosition={labelPosition}
         onKeyDownCapture={handleTrackKeydownCapture}
         onMouseDownCapture={() => container.current?.focus()}
-        // @ts-expect-error: MutableRefObject not assignable to Ref
+        //tb  // @ts-expect-error: MutableRefObject not assignable to Ref
         ref={container}
         size={sliderSize}
       >
@@ -248,7 +248,7 @@ const SliderComponent = (props: SliderComponentProps) => {
             min={min}
             onMouseDown={handleThumbMouseDown}
             position={position}
-            // @ts-expect-error: MutableRefObject not assignable to Ref
+            //tb  // @ts-expect-error: MutableRefObject not assignable to Ref
             ref={thumb}
             showTooltipOnHover={hovered}
             size={sliderSize}

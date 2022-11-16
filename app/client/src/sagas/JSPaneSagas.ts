@@ -292,7 +292,7 @@ function* updateJSCollection(data: {
 
         yield put(
           updateJSCollectionSuccess({
-            // @ts-expect-error: data is of type unknown
+            //tb  // @ts-expect-error: data is of type unknown
             data: response?.data,
           }),
         );
@@ -476,7 +476,7 @@ function* handleUpdateJSCollectionBody(
     getJSCollection,
     actionPayload.payload.id,
   );
-  // @ts-expect-error: Object jsCollection is possibly undefined
+  //tb  // @ts-expect-error: Object jsCollection is possibly undefined
   jsCollection["body"] = actionPayload.payload.body;
   try {
     if (jsCollection) {
@@ -485,7 +485,7 @@ function* handleUpdateJSCollectionBody(
       );
       const isValidResponse: boolean = yield validateResponse(response);
       if (isValidResponse) {
-        // @ts-expect-error: response is of type unknown
+        //tb  // @ts-expect-error: response is of type unknown
         yield put(updateJSCollectionBodySuccess({ data: response?.data }));
         checkAndLogErrorsIfCyclicDependency(
           (response.data as JSCollection).errorReports,
@@ -550,7 +550,7 @@ function* handleRefactorJSActionNameSaga(
         });
         if (currentPageId === data.payload.refactorAction.pageId) {
           yield updateCanvasWithDSL(
-            // @ts-expect-error: response is of type unknown
+            //tb  // @ts-expect-error: response is of type unknown
             refactorResponse.data,
             data.payload.refactorAction.pageId,
             layoutId,

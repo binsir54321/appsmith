@@ -61,7 +61,7 @@ class ActionSelectorControl extends BaseControl<ControlProps> {
     return "ACTION_SELECTOR";
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  //tb  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   static canDisplayValueInUI(config: ControlData, value: any): boolean {
     return true;
   }

@@ -30,7 +30,7 @@ import Guide from "../GuidedTour/Guide";
 import PropertyPaneContainer from "./PropertyPaneContainer";
 import CanvasTopSection from "./EmptyCanvasSection";
 
-/* eslint-disable react/display-name */
+//tb  /* tb eslint-disable react/display-name */
 function WidgetsEditor() {
   const { deselectAll, focusWidget, selectWidget } = useWidgetSelection();
   const dispatch = useDispatch();

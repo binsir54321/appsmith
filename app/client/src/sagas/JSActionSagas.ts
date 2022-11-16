@@ -99,15 +99,15 @@ export function* createJSCollectionSaga(
         text: `JS Object created`,
         source: {
           type: ENTITY_TYPE.JSACTION,
-          // @ts-expect-error: response.data is of type unknown
+          //tb  // @ts-expect-error: response.data is of type unknown
           id: response.data.id,
-          // @ts-expect-error: response.data is of type unknown
+          //tb  // @ts-expect-error: response.data is of type unknown
           name: response.data.name,
         },
       });
 
       const newAction = response.data;
-      // @ts-expect-error: response.data is of type unknown
+      //tb  // @ts-expect-error: response.data is of type unknown
       yield put(createJSCollectionSuccess(newAction));
     }
   } catch (error) {
@@ -148,7 +148,7 @@ function* copyJSCollectionSaga(
     const isValidResponse: boolean = yield validateResponse(response);
     const pageName: string = yield select(
       getPageNameByPageId,
-      // @ts-expect-error: response.data is of type unknown
+      //tb  // @ts-expect-error: response.data is of type unknown
       response.data.pageId,
     );
     if (isValidResponse) {
@@ -162,7 +162,7 @@ function* copyJSCollectionSaga(
       });
       const payload = response.data;
 
-      // @ts-expect-error: response.data is of type unknown
+      //tb  // @ts-expect-error: response.data is of type unknown
       yield put(copyJSCollectionSuccess(payload));
     }
   } catch (e) {
@@ -207,21 +207,21 @@ function* moveJSCollectionSaga(
     const isValidResponse: boolean = yield validateResponse(response);
     const pageName: string = yield select(
       getPageNameByPageId,
-      // @ts-expect-error: response.data is of type unknown
+      //tb  // @ts-expect-error: response.data is of type unknown
       response.data.pageId,
     );
     if (isValidResponse) {
       Toaster.show({
         text: createMessage(
           JS_ACTION_MOVE_SUCCESS,
-          // @ts-expect-error: response.data is of type unknown
+          //tb  // @ts-expect-error: response.data is of type unknown
           response.data.name,
           pageName,
         ),
         variant: Variant.success,
       });
     }
-    // @ts-expect-error: response.data is of type unknown
+    //tb  // @ts-expect-error: response.data is of type unknown
     yield put(moveJSCollectionSuccess(response.data));
   } catch (e) {
     Toaster.show({
@@ -268,7 +268,7 @@ export function* deleteJSCollectionSaga(
     const isValidResponse: boolean = yield validateResponse(response);
     if (isValidResponse) {
       Toaster.show({
-        // @ts-expect-error: response.data is of type unknown
+        //tb  // @ts-expect-error: response.data is of type unknown
         text: createMessage(JS_ACTION_DELETE_SUCCESS, response.data.name),
         variant: Variant.success,
       });
@@ -278,9 +278,9 @@ export function* deleteJSCollectionSaga(
         text: "JS object was deleted",
         source: {
           type: ENTITY_TYPE.JSACTION,
-          // @ts-expect-error: response.data is of type unknown
+          //tb  // @ts-expect-error: response.data is of type unknown
           name: response.data.name,
-          // @ts-expect-error: response.data is of type unknown
+          //tb  // @ts-expect-error: response.data is of type unknown
           id: response.data.id,
         },
       });
@@ -362,7 +362,7 @@ export function* refactorJSObjectName(
         },
       });
       if (currentPageId === pageId) {
-        // @ts-expect-error: refactorResponse.data is of type unknown
+        //tb  // @ts-expect-error: refactorResponse.data is of type unknown
         yield updateCanvasWithDSL(refactorResponse.data, pageId, layoutId);
       } else {
         yield put(fetchJSCollectionsForPage(pageId));

@@ -42,7 +42,7 @@ const WidgetBoundaries = styled.div`
 
 type DraggableComponentProps = WidgetProps;
 
-/* eslint-disable react/display-name */
+//tb  /* tb eslint-disable react/display-name */
 
 /**
  * can drag helper function for react-dnd hook

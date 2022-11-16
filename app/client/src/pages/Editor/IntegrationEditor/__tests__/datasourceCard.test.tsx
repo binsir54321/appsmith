@@ -13,9 +13,9 @@ describe("Tasks", () => {
     });
     const generatePageComponent = render(
       <DatasourceCard
-        // @ts-expect-error: Type mismatch
+        //tb  // @ts-expect-error: Type mismatch
         datasource={mockDatasources[0]}
-        // @ts-expect-error: Type mismatch
+        //tb  // @ts-expect-error: Type mismatch
         plugin={mockPlugins[0]}
       />,
     );
@@ -25,9 +25,9 @@ describe("Tasks", () => {
 
     const NoGeneratePageComponent = render(
       <DatasourceCard
-        // @ts-expect-error: Type mismatch
+        //tb  // @ts-expect-error: Type mismatch
         datasource={mockDatasources[1]}
-        // @ts-expect-error: Type mismatch
+        //tb  // @ts-expect-error: Type mismatch
         plugin={mockPlugins[1]}
       />,
     );

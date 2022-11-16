@@ -17,7 +17,7 @@
     "test:jest": "$(npm bin)/jest --watch",
     "build": "rollup -c",
     "start": "rollup -c",
-    "link-package": "yarn install && rollup -c && cd build && cp -R ../node_modules ./node_modules && yarn link"
+    "link-package": "cnpm install && rollup -c && cd build && cp -R ../node_modules ./node_modules && yarn link"
   },
   "dependencies": {
     "acorn": "^8.8.0",

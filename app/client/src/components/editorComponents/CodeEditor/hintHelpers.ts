@@ -8,7 +8,7 @@ import { ENTITY_TYPE } from "entities/DataTree/dataTreeFactory";
 
 export const bindingHint: HintHelper = (editor) => {
   editor.setOption("extraKeys", {
-    // @ts-expect-error: Types are not available
+    //tb  // @ts-expect-error: Types are not available
     ...editor.options.extraKeys,
     [KeyboardShortcuts.CodeEditor.OpenAutocomplete]: (cm: CodeMirror.Editor) =>
       checkIfCursorInsideBinding(cm) && TernServer.complete(cm),
@@ -46,7 +46,7 @@ export const bindingHint: HintHelper = (editor) => {
         TernServer.complete(editor);
         return true;
       }
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       editor.closeHint();
       return shouldShow;
     },

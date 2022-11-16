@@ -751,14 +751,14 @@ class ListWidget extends BaseWidget<ListWidgetProps<WidgetProps>, WidgetState> {
       listData: any,
       staticTemplate: any,
       canvasChildren: any,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      //tb  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      //tb  // eslint-disable-next-line @typescript-eslint/no-unused-vars
       page: number,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      //tb  // eslint-disable-next-line @typescript-eslint/no-unused-vars
       gridGap,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      //tb  // eslint-disable-next-line @typescript-eslint/no-unused-vars
       itemBackgroundColor,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      //tb  // eslint-disable-next-line @typescript-eslint/no-unused-vars
       perPage,
     ) => {
       const canvasChildrenList = [];

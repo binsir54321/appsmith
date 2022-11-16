@@ -22,7 +22,7 @@ const generateWidget = memoize(function getWidgetComponent(
   //@ts-expect-error: type mismatch
   widget = withWidgetProps(widget);
   return Sentry.withProfiler(
-    // @ts-expect-error: Types are not available
+    //tb  // @ts-expect-error: Types are not available
     widget,
   );
 });

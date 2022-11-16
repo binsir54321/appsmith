@@ -1,4 +1,4 @@
-/* eslint-disable  @typescript-eslint/ban-ts-comment */
+//tb  /* tb eslint-disable  @typescript-eslint/ban-ts-comment */
 import _ from "lodash";
 import { put, debounce, takeEvery, all } from "redux-saga/effects";
 import {
@@ -64,7 +64,7 @@ function* executeBatchSaga() {
       const needsSaga = batch.filter((b) => BATCH_PRIORITY[b.type].needsSaga);
       const canBatch = batch.filter((b) => !BATCH_PRIORITY[b.type].needsSaga);
       batches[priority] = [];
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       yield put(canBatch);
       if (needsSaga.length) {
         for (const sagaAction of needsSaga) {

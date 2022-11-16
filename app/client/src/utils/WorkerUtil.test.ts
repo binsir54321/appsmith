@@ -29,7 +29,7 @@ class MockWorkerClass implements WorkerClass {
   }
 
   constructor() {
-    /* eslint-disable @typescript-eslint/no-empty-function */
+    //tb  /* tb eslint-disable @typescript-eslint/no-empty-function */
     this.noop = () => {};
     this.callback = this.noop;
     this.messages = [];
@@ -260,7 +260,7 @@ describe("GracefulWorkerService", () => {
     const workerRequestId = "testID";
     runSaga(
       {},
-      // @ts-expect-error: type mismatch
+      //tb  // @ts-expect-error: type mismatch
       w.duplexResponseHandler,
       mainThreadResponseChannel,
     );

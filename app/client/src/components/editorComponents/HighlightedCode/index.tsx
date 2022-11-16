@@ -41,7 +41,7 @@ type HighlightedCodeProps = {
   onClick?: () => void;
   className?: string;
 };
-/* eslint-disable react/display-name */
+//tb  /* tb eslint-disable react/display-name */
 export const HighlightedCode = forwardRef(
   (props: HighlightedCodeProps, ref: Ref<HTMLDivElement>) => {
     const codeRef: MutableRefObject<HTMLElement | null> = useRef(null);

@@ -104,9 +104,9 @@ describe("substituteDynamicBindingWithValues", () => {
       );
 
       expect(result).toHaveProperty("value");
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       expect(result.value).toBe(expected.value);
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       expect(result.parameters).toStrictEqual(expected.parameters);
     });
 
@@ -140,9 +140,9 @@ describe("substituteDynamicBindingWithValues", () => {
       );
 
       expect(result).toHaveProperty("value");
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       expect(result.value).toBe(expected.value);
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       expect(result.parameters).toStrictEqual(expected.parameters);
     });
 
@@ -175,9 +175,9 @@ describe("substituteDynamicBindingWithValues", () => {
       );
 
       expect(result).toHaveProperty("value");
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       expect(result.value).toBe(expected.value);
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       expect(result.parameters).toStrictEqual(expected.parameters);
     });
   });

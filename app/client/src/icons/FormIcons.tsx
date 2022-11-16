@@ -9,7 +9,7 @@ import { ReactComponent as LockIcon } from "assets/icons/form/lock.svg";
 
 import DeleteIcon from "remixicon-react/DeleteBinLineIcon";
 
-/* eslint-disable react/display-name */
+//tb  /* tb eslint-disable react/display-name */
 
 export const FormIcons: {
   [id: string]: JSXElementConstructor<IconProps & { style?: CSSProperties }>;

@@ -28,8 +28,8 @@ class IconWidget extends BaseWidget<IconWidgetProps, WidgetState> {
   static getMetaPropertiesMap(): Record<string, any> {
     return {};
   }
-  /* eslint-disable @typescript-eslint/no-unused-vars */
-  /* eslint-disable @typescript-eslint/no-empty-function */
+  //tb  /* tb eslint-disable @typescript-eslint/no-unused-vars */
+  //tb  /* tb eslint-disable @typescript-eslint/no-empty-function */
   handleActionResult = (result: ExecutionResult) => {};
 
   onClick = () => {

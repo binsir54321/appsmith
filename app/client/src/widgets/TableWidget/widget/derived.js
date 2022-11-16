@@ -1,5 +1,5 @@
-/* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-unused-vars*/
+//tb  /* tb eslint-disable no-console */
+//tb  /* tb eslint-disable @typescript-eslint/no-unused-vars*/
 export default {
   getSelectedRow: (props, moment, _) => {
     let selectedRowIndices = [];

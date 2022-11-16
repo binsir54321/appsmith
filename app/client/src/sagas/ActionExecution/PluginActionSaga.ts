@@ -227,7 +227,7 @@ function* resolvingBlobUrls(
       set(value, blobUrlPath, resolvedBlobValue);
     }
   } else if (isBlobUrl(value)) {
-    // @ts-expect-error: Values can take many types
+    //tb  // @ts-expect-error: Values can take many types
     value = yield call(readBlob, value);
   }
 
@@ -274,7 +274,7 @@ function* evaluateActionParams(
     return [];
   }
   // Evaluated all bindings of the actions. Pass executionParams if any
-  // @ts-expect-error: Values can take many types
+  //tb  // @ts-expect-error: Values can take many types
   const values = yield call(evaluateActionBindings, bindings, executionParams);
 
   const bindingsMap: Record<string, string> = {};
@@ -306,7 +306,7 @@ function* evaluateActionParams(
       };
       value = tempArr;
     } else {
-      // @ts-expect-error: Values can take many types
+      //tb  // @ts-expect-error: Values can take many types
       value = yield call(resolvingBlobUrls, value, executeActionRequest, i);
     }
 
@@ -850,7 +850,7 @@ function* executePageLoadActionsSaga() {
     );
     for (const actionSet of pageActions) {
       // Load all sets in parallel
-      // @ts-expect-error: no idea how to type this
+      //tb  // @ts-expect-error: no idea how to type this
       yield* yield all(
         actionSet.map((apiAction) => call(executePageLoadAction, apiAction)),
       );
@@ -890,7 +890,7 @@ function* executePluginActionSaga(
   let pluginAction;
   let actionId;
   if (isString(actionOrActionId)) {
-    // @ts-expect-error: plugin Action can take many types
+    //tb  // @ts-expect-error: plugin Action can take many types
     pluginAction = yield select(getAction, actionOrActionId);
     actionId = actionOrActionId;
   } else {

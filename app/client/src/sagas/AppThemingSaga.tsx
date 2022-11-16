@@ -75,7 +75,7 @@ export function* initAppTheming() {
  *
  * @param action
  */
-// eslint-disable-next-line
+//tb  // eslint-disable-next-line
 export function* fetchAppThemes(action: ReduxAction<FetchAppThemesAction>) {
   try {
     const { applicationId } = action.payload;
@@ -102,7 +102,7 @@ export function* fetchAppThemes(action: ReduxAction<FetchAppThemesAction>) {
  */
 
 export function* fetchAppSelectedTheme(
-  // eslint-disable-next-line
+  //tb  // eslint-disable-next-line
   action: ReduxAction<FetchSelectedAppThemeAction>,
 ): SagaIterator | AxiosPromise {
   const { applicationId } = action.payload;
@@ -112,7 +112,7 @@ export function* fetchAppSelectedTheme(
   const userDetails = yield select(getCurrentUser);
   const applicationVersion = yield select(selectApplicationVersion);
   try {
-    // eslint-disable-next-line
+    //tb  // eslint-disable-next-line
     const response: ApiResponse<AppTheme[]> = yield ThemingApi.fetchSelected(
       applicationId,
       mode,
@@ -155,7 +155,7 @@ export function* fetchAppSelectedTheme(
 export function* updateSelectedTheme(
   action: ReduxAction<UpdateSelectedAppThemeAction>,
 ) {
-  // eslint-disable-next-line
+  //tb  // eslint-disable-next-line
   const { shouldReplay = true, theme, applicationId } = action.payload;
   const canvasWidgets: CanvasWidgetsReduxState = yield select(getCanvasWidgets);
 
@@ -308,7 +308,7 @@ function* resetTheme() {
     const canvasWidgets: CanvasWidgetsReduxState = yield select(
       getCanvasWidgets,
     );
-    // @ts-expect-error: Type the StyleSheet
+    //tb  // @ts-expect-error: Type the StyleSheet
     const themeStylesheet = yield select(getSelectedAppThemeStylesheet);
 
     const propertiesToUpdate: UpdateWidgetPropertyPayload[] = getPropertiesToUpdateForReset(

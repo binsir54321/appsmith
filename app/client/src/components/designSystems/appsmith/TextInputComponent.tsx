@@ -12,7 +12,7 @@ import { ComponentProps } from "widgets/BaseComponent";
 import { Colors } from "constants/Colors";
 import { replayHighlightClass } from "globalStyles/portals";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+//tb  // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const TextInput = styled(({ hasError, ...rest }) => (
   <InputGroup {...rest} />
 ))<{ hasError: boolean }>`

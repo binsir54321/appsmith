@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+//tb  /* tb eslint-disable no-console */
 import { DataTree } from "entities/DataTree/dataTreeFactory";
 import {
   EvaluationError,
@@ -76,7 +76,7 @@ function resetWorkerGlobalScope() {
     if (topLevelWorkerAPIs[key]) continue;
     if (key === "evaluationVersion") continue;
     if (extraLibraries.find((lib) => lib.accessor === key)) continue;
-    // @ts-expect-error: Types are not available
+    //tb  // @ts-expect-error: Types are not available
     delete self[key];
   }
 }
@@ -108,13 +108,13 @@ export const getScriptToEval = (
 export function setupEvaluationEnvironment() {
   ///// Adding extra libraries separately
   extraLibraries.forEach((library) => {
-    // @ts-expect-error: Types are not available
+    //tb  // @ts-expect-error: Types are not available
     self[library.accessor] = library.lib;
   });
 
   ///// Remove all unsafe functions
   unsafeFunctionForEval.forEach((func) => {
-    // @ts-expect-error: Types are not available
+    //tb  // @ts-expect-error: Types are not available
     self[func] = undefined;
   });
   userLogs.overrideConsoleAPI();
@@ -291,7 +291,7 @@ export default function evaluateSync(
     // as global data. This is what enables access all appsmith
     // entity properties from the global context
     for (const entity in GLOBAL_DATA) {
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       self[entity] = GLOBAL_DATA[entity];
     }
 
@@ -311,7 +311,7 @@ export default function evaluateSync(
     } finally {
       if (!skipLogsOperations) logs = userLogs.flushLogs();
       for (const entity in GLOBAL_DATA) {
-        // @ts-expect-error: Types are not available
+        //tb  // @ts-expect-error: Types are not available
         delete self[entity];
       }
     }
@@ -353,7 +353,7 @@ export async function evaluateAsync(
     // as global data. This is what enables access all appsmith
     // entity properties from the global context
     Object.keys(GLOBAL_DATA).forEach((key) => {
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       self[key] = GLOBAL_DATA[key];
     });
 
@@ -392,7 +392,7 @@ export async function evaluateAsync(
         });
       } finally {
         for (const entity in GLOBAL_DATA) {
-          // @ts-expect-error: Types are not available
+          //tb  // @ts-expect-error: Types are not available
           delete self[entity];
         }
       }
@@ -451,7 +451,7 @@ export function isFunctionAsync(
     // as global data. This is what enables access all appsmith
     // entity properties from the global context
     Object.keys(GLOBAL_DATA).forEach((key) => {
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       self[key] = GLOBAL_DATA[key];
     });
     try {
@@ -476,7 +476,7 @@ export function isFunctionAsync(
     }
     const isAsync = !!self.IS_ASYNC;
     for (const entity in GLOBAL_DATA) {
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       delete self[entity];
     }
     return isAsync;

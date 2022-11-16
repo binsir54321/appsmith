@@ -224,7 +224,6 @@ export const Entity = forwardRef(
     const dispatch = useDispatch();
     const guidedTourEnabled = useSelector(inGuidedTour);
 
-    /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() => {
       if (props.isDefaultExpanded || props.searchKeyword) {
         open(true);
@@ -236,7 +235,6 @@ export const Entity = forwardRef(
         open(false);
       }
     }, [props.searchKeyword]);
-    /* eslint-enable react-hooks/exhaustive-deps */
 
     const toggleChildren = (e: any) => {
       // Make sure this entity is enabled before toggling the collpse of children.

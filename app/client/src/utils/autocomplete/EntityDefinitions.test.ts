@@ -90,7 +90,7 @@ const jsObject: JSCollectionData = {
         collectionId: "1234",
         actionConfiguration: {
           timeoutInMillisecond: 10000,
-          // @ts-expect-error: paginationType does not exists on JSAction
+          //tb  // @ts-expect-error: paginationType does not exists on JSAction
           paginationType: "NONE",
           encodeParamsToggle: true,
           body: "() => {\n\t\t//write code here\n\t}",
@@ -133,7 +133,7 @@ const jsObject: JSCollectionData = {
         collectionId: "1234",
         actionConfiguration: {
           timeoutInMillisecond: 10000,
-          // @ts-expect-error: encodeParamsToggle does not exists on JSAction
+          //tb  // @ts-expect-error: encodeParamsToggle does not exists on JSAction
           encodeParamsToggle: true,
           body: "async () => {\n\t\t//use async-await or promises\n\t}",
           jsArguments: [],

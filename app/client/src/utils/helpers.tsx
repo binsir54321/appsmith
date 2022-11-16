@@ -701,7 +701,7 @@ export function unFocus(document: Document, window: Window) {
   } else {
     try {
       window.getSelection()?.removeAllRanges();
-      // eslint-disable-next-line no-empty
+      //tb  // eslint-disable-next-line no-empty
     } catch (e) {}
   }
 }

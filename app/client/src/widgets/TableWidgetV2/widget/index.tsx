@@ -801,7 +801,7 @@ class TableWidgetV2 extends BaseWidget<TableWidgetProps, WidgetState> {
   };
 
   getPaddingAdjustedDimensions = () => {
-    // eslint-disable-next-line prefer-const
+    //tb  // eslint-disable-next-line prefer-const
     let { componentHeight, componentWidth } = this.getComponentDimensions();
     // (2 * WIDGET_PADDING) gives the total horizontal padding (i.e. paddingLeft + paddingRight)
     componentWidth = componentWidth - 2 * WIDGET_PADDING;

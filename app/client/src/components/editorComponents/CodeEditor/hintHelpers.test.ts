@@ -4,7 +4,7 @@ import { MockCodemirrorEditor } from "../../../../test/__mocks__/CodeMirrorEdito
 describe("hint helpers", () => {
   describe("binding hint helper", () => {
     it("is initialized correctly", () => {
-      // @ts-expect-error: Types are not available
+      //tb  // @ts-expect-error: Types are not available
       const helper = bindingHint(MockCodemirrorEditor, {});
       expect(MockCodemirrorEditor.setOption).toBeCalled();
       expect(helper).toHaveProperty("showHint");
@@ -66,9 +66,9 @@ describe("hint helpers", () => {
 
       // Test
       cases.forEach(() => {
-        // @ts-expect-error: Types are not available
+        //tb  // @ts-expect-error: Types are not available
         const helper = bindingHint(MockCodemirrorEditor, {});
-        // @ts-expect-error: Types are not available
+        //tb  // @ts-expect-error: Types are not available
         helper.showHint(MockCodemirrorEditor);
       });
 

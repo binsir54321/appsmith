@@ -24,7 +24,7 @@ function messageEventListener(fn: typeof eventRequestHandler) {
         timeTaken: (endTime - startTime).toFixed(2),
       });
     } catch (e) {
-      // eslint-disable-next-line no-console
+      //tb  // eslint-disable-next-line no-console
       console.error(e);
       self.postMessage({
         requestId,
@@ -58,7 +58,7 @@ function eventRequestHandler({
     }
 
     default: {
-      // eslint-disable-next-line no-console
+      //tb  // eslint-disable-next-line no-console
       console.error("Action not registered on lintWorker ", method);
     }
   }

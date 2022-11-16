@@ -124,11 +124,11 @@ const parseMarkdown = (value: string) => {
   marked.use({
     walkTokens(token) {
       const currentToken = token;
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //tb  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       if ("type" in currentToken && currentToken.type === "link") {
         if ("href" in currentToken) {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          //tb  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           let href = currentToken.href;
           try {
@@ -136,7 +136,7 @@ const parseMarkdown = (value: string) => {
           } catch (e) {
             href = `${HelpBaseURL}/${href}`;
           }
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          //tb  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           currentToken.href = href
             .replace(aisTag, "")
